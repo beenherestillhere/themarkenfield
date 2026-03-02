@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Markenfield Windows — Housing Justice Exhibition, Morningside Heights NYC</title>
+
+  <!-- SEO -->
+  <meta name="description" content="The Markenfield Windows is a digital portal to a street-level window exhibition on West 111th Street in Morningside Heights, Manhattan, confronting housing displacement, tenant erasure, and eviction. Featuring the Marie Runyon Archive.">
+  <meta name="keywords" content="The Markenfield, Markenfield Windows, 605 West 111th Street, 606 West 111th Street, 607 West 111th Street, 608 West 111th Street, 609 West 111th Street, 610 West 111th Street, 611 West 111th Street, 605-611 West 111th Street, Morningside Heights, housing displacement, tenant rights, eviction, rent stabilized, housing justice, Marie Runyon, window exhibition, NYC housing, tenant activism, Columbia University, West 111th Street">
+  <meta name="author" content="Kristina Maria Lopez">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://beenherestillhere.github.io/markenfield/">
+
+  <!-- Open Graph (Facebook, iMessage, WhatsApp previews) -->
+  <meta property="og:title" content="The Markenfield Windows — Housing Justice Exhibition">
+  <meta property="og:description" content="A digital portal to a street-level window exhibition confronting housing displacement and tenant erasure in Morningside Heights, Manhattan. Featuring the Marie Runyon Archive.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beenherestillhere.github.io/markenfield/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Markenfield Windows — Housing Justice Exhibition">
+  <meta name="twitter:description" content="A digital portal to a street-level window exhibition confronting housing displacement and tenant erasure in Morningside Heights, Manhattan.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #fafafa;
+      --rule: 1.5px solid #0a0a0a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Archive', 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── Archive Narrow via @font-face if available, fallback to Barlow Condensed ── */
+    @font-face {
+      font-family: 'Archive';
+      src: local('Archive'), local('Archive Narrow');
+    }
+
+    /* ── MARQUEE HEADER ── */
+    .marquee-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--black);
+      color: var(--white);
+      padding: 10px 0;
+      overflow: hidden;
+      border-bottom: var(--rule);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 55s linear infinite;
+    }
+
+    .marquee-track:hover { animation-play-state: paused; }
+
+    .marquee-text {
+      font-family: 'Archive', 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      /* No padding-right — spacing handled by dividers only */
+    }
+
+    .marquee-text .divider {
+      margin: 0 1.5rem;
+      opacity: 0.4;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── NAV ── */
+    nav {
+      border-bottom: var(--rule);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+
+    .nav-title {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .nav-links a:hover { border-bottom-color: var(--black); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem);
+      border-bottom: var(--rule);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 10vw, 9rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      line-height: 0.9;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      line-height: 1.6;
+      max-width: 38ch;
+      align-self: end;
+    }
+
+    .hero-sub p + p { margin-top: 0.75em; }
+
+    .hero-sub strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section {
+      border-bottom: var(--rule);
+    }
+
+    .section-inner {
+      padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+      border-bottom: var(--rule);
+      padding-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    /* ── ABOUT ── */
+    #about .section-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+
+    @media (max-width: 700px) {
+      #about .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .about-statement {
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      line-height: 1.55;
+      max-width: 60ch;
+    }
+
+    .about-statement em { font-style: italic; }
+
+    .about-statement strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .about-statement p + p { margin-top: 1.2em; }
+
+    .about-aside {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #444;
+    }
+
+    .about-aside p + p { margin-top: 1em; }
+
+    .about-aside a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .legal-note {
+      margin-top: 2.5rem;
+      font-size: 0.68rem;
+      line-height: 1.6;
+      color: #888;
+      max-width: 60ch;
+      border-top: 1px solid #ddd;
+      padding-top: 1.2rem;
+    }
+
+    .legal-bar {
+      border-bottom: var(--rule);
+      padding: 0.75rem clamp(1.5rem, 5vw, 4rem);
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      color: #888;
+    }
+
+    /* ── EXHIBITION BLURB ── */
+    .exhibition-blurb {
+      margin-top: 0;
+      margin-bottom: 3rem;
+      border-top: var(--rule);
+      padding-top: 2.5rem;
+    }
+
+    .exhibition-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .exhibition-header { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    .exhibition-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .exhibition-meta {
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+    .exhibition-meta strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .exhibition-meta em { font-style: italic; }
+
+    .exhibition-thanks {
+      font-size: 0.78rem;
+      line-height: 1.65;
+      color: #555;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: var(--rule);
+    }
+
+    .exhibition-thanks a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .exhibition-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 3rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      line-height: 1.65;
+    }
+
+    @media (max-width: 700px) {
+      .exhibition-body { grid-template-columns: 1fr; }
+    }
+
+    .subsection-header {
+      margin-bottom: 2rem;
+      padding-top: 2.5rem;
+      border-top: var(--rule);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .subsection-header { grid-template-columns: 1fr; gap: 1rem; }
+    }
+
+    .subsection-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.15;
+    }
+
+    .subsection-blurb {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ── EXHIBITION WORKS ── */
+    #works .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2.5rem;
+      border-top: var(--rule);
+    }
+
+    .work-cell {
+      border-right: none;
+      border-bottom: none;
+      padding: 0;
+      background: transparent;
+      position: relative;
+      overflow: visible;
+      width: 100%;
+    }
+
+    .work-cell:last-child { border-right: none; }
+
+    .work-cell img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ── WINDOW EXHIBITION ── */
+    #window .section-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      #window .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .window-statement {
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .window-statement em {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .window-statement u { text-underline-offset: 4px; }
+
+    .window-details {
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .window-details strong {
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .window-details strong:first-child { margin-top: 0; }
+
+    /* ── DEMANDS TICKER ── */
+    .demands-bar {
+      background: var(--black);
+      color: var(--white);
+      padding: 12px 0;
+      overflow: hidden;
+      border-bottom: var(--rule);
+    }
+
+    .demands-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 45s linear infinite reverse;
+    }
+
+    .demands-text {
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-style: italic;
+      /* No padding-right — spacing handled inline */
+    }
+
+    /* ── CONTACT ── */
+    #contact .section-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      #contact .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .contact-heading {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-heading em {
+      font-style: italic;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: var(--black);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-info strong {
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-info strong:first-child { margin-top: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.2rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      border-top: var(--rule);
+    }
+
+    .footer-disclaimer {
+      padding: 1rem clamp(1.5rem, 5vw, 4rem) 2rem;
+      font-size: 0.62rem;
+      line-height: 1.6;
+      color: #aaa;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* ── PROTEST STAMP ── */
+    .stamp {
+      display: inline-block;
+      border: 2.5px solid var(--black);
+      padding: 0.3em 0.7em;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MARQUEE HEADER -->
+  <div class="marquee-header" aria-label="Protest marquee">
+    <div class="marquee-track">
+      <div class="marquee-text">CHANGE.ORG/PROTECTRENTERSRIGHTS <span class="divider">—</span> BEEN HERE STILL HERE <span class="divider">—</span> WE WON'T MOVE <span class="divider">—</span> THIS IS MY HOME AND I WILL NOT BE DISPLACED <span class="divider">—</span> EVEN OUR ROACHES PROTEST THE EVICTIONS <span class="divider">—</span> WE SHALL OVERCOME <span class="divider">—</span> TENANT POWER <span class="divider">—</span> HAPPINESS IS NOT BEING EVICTED <span class="divider">—</span> JUSTICE DELAYED IS JUSTICE DENIED <span class="divider">—</span> RENT STABILIZED TENANT RIGHTS MATTER <span class="divider">—</span> DE AQUÍ SIGO AQUÍ <span class="divider">—</span></div><div class="marquee-text" aria-hidden="true">CHANGE.ORG/PROTECTRENTERSRIGHTS <span class="divider">—</span> BEEN HERE STILL HERE <span class="divider">—</span> WE WON'T MOVE <span class="divider">—</span> THIS IS MY HOME AND I WILL NOT BE DISPLACED <span class="divider">—</span> EVEN OUR ROACHES PROTEST THE EVICTIONS <span class="divider">—</span> WE SHALL OVERCOME <span class="divider">—</span> TENANT POWER <span class="divider">—</span> HAPPINESS IS NOT BEING EVICTED <span class="divider">—</span> JUSTICE DELAYED IS JUSTICE DENIED <span class="divider">—</span> RENT STABILIZED TENANT RIGHTS MATTER <span class="divider">—</span> DE AQUÍ SIGO AQUÍ <span class="divider">—</span></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-title">The Markenfield Windows</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Exhibition</a></li>
+      <li><a href="#window">Windows</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://change.org/protectrentersrights" target="_blank">Sign the Petition</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-title">
+      The<br>
+      Marken<em>field</em><br>
+      <span style="font-size: 0.85em; letter-spacing: 0.04em;">Windows</span>
+    </div>
+    <div class="hero-sub">
+      <p>A digital portal to the window exhibition on West 111th Street in Morningside Heights, Manhattan.</p>
+      <p>Housing as battleground. Displacement as erasure. The window as witness.</p>
+      <div class="stamp">Ongoing</div>
+    </div>
+  </div>
+
+  <!-- LEGAL BAR -->
+  <div class="legal-bar">This project is an independent, personal initiative and is not affiliated with or endorsed by the Markenfield Cooperative or property management. All content is created in accordance with tenant rights and protected under the First Amendment, including rights to free speech, documentation, and commentary on matters of public interest.</div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div>
+        <span class="section-label">About</span>
+      </div>
+      <div>
+        <div class="about-statement">
+          <p><em>The Markenfield Windows</em> is a digital portal to a street-level exhibition confronting housing displacement, tenant erasure, and the enduring impact of eviction — pressures that disproportionately affect women of color across this country.</p>
+          <p>The project takes its name from <strong>THE MARKENFIELD</strong> — two former rental buildings converted during the cooperative boom of the late 1980s, a period that significantly reshaped New York's housing landscape. Their transition from rental to cooperative ownership reflects a broader citywide pattern in which rent-stabilized housing stock declined over time, leaving only a small number of rent-stabilized households in place today. Back then, many more working class Latina families like mine still called Morningside Heights home.</p>
+          <p>This exhibition lives in windows and on screens at once: a physical act of visibility made public to the street, and a digital archive committed to preserving tenant memory and lived experience.</p>
+          <p>We reject the framing of tenants as liabilities or obstacles to progress. Tenants are the memory, the culture, and the conscience of a neighborhood.</p>
+          <p><strong>WE SHALL NOT BE MOVED!</strong></p>
+          <p>To learn more, read and sign the petition: <a href="https://change.org/protectrentersrights" target="_blank" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">change.org/protectrentersrights</a></p>
+        </div>
+        <p class="legal-note" style="display:none;"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMANDS BAR -->
+  <!-- DEMANDS TICKER -->
+  <div class="demands-bar">
+    <div class="demands-track">
+      <div class="demands-text">Tenant Power &nbsp;·&nbsp; Housing Is A Human Right &nbsp;·&nbsp; We Won't Move &nbsp;·&nbsp; No More Evictions &nbsp;·&nbsp; Been Here Still Here &nbsp;·&nbsp; Protect Renters Now &nbsp;·&nbsp; Even Our Roaches Resist &nbsp;·&nbsp; Justice Delayed Is Justice Denied &nbsp;·&nbsp; Rent Stabilized Tenant Rights Matter &nbsp;·&nbsp; De Aquí Sigo Aquí &nbsp;·&nbsp; Change.org/ProtectRentersRights &nbsp;·&nbsp;</div><div class="demands-text" aria-hidden="true">Tenant Power &nbsp;·&nbsp; Housing Is A Human Right &nbsp;·&nbsp; We Won't Move &nbsp;·&nbsp; No More Evictions &nbsp;·&nbsp; Been Here Still Here &nbsp;·&nbsp; Protect Renters Now &nbsp;·&nbsp; Even Our Roaches Resist &nbsp;·&nbsp; Justice Delayed Is Justice Denied &nbsp;·&nbsp; Rent Stabilized Tenant Rights Matter &nbsp;·&nbsp; De Aquí Sigo Aquí &nbsp;·&nbsp; Change.org/ProtectRentersRights &nbsp;·&nbsp;</div>
+    </div>
+  </div>
+
+  <!-- EXHIBITION WORKS -->
+  <section id="works">
+    <div class="section-inner">
+      <span class="section-label">Current Exhibition</span>
+
+      <div class="exhibition-blurb">
+        <div class="exhibition-header">
+          <h2 class="exhibition-title">Windows of Resistance:<br>Selections from the Marie Runyon Archive</h2>
+          <div class="exhibition-meta">
+            <p>Curated by <strong>Kristina Maria Lopez</strong><br>
+            A'Lelia Bundles Community Scholar,<br>
+            Columbia University<br>
+            <em>Currently at risk of eviction from The Markenfield and advocating for rent-stabilized tenant rights.</em></p>
+          </div>
+        </div>
+
+        <p class="exhibition-thanks">Thank you to Senator Cleare, Assembly Member Lasher, Council Member Abreu, Morningside Heights Community Coalition, Harlem Run, and Defend Harlem for your letters of support alongside the 1,500+ people who have signed <a href="https://change.org/protectrentersrights" target="_blank">CHANGE.ORG/PROTECTRENTERSRIGHTS</a></p>
+
+        <div class="exhibition-body">
+          <p>This exhibition presents ephemera from the archive of Marie Runyon (1915–2018), tenant activist, former legislator, and longtime Morningside Heights resident. For 40 years Runyon fought to remain in her home at 130 Morningside Drive despite her landlord Columbia University's eviction attempts; in 2002, her building was renamed Marie Runyon Court, and the street in her honor in 2019.</p>
+          <p>Her activism spanned street theater, rent strikes, strategic litigation, alliances with anti-capitalist movements, and creative fundraising. For her, protest was both logistics and art. The materials on view, once used to mobilize tenants in hallways and sidewalks, now form part of New York City's housing history.</p>
+          <p>Installed on the windows of my rent-stabilized home where I've advocated for succession rights since my grandmother's 2024 death, this exhibition situates these strategies within the legacy of housing activism in Morningside Heights.</p>
+          <p>By returning tenant rights ephemera to public view, these works ask how urban memory is preserved, how movements endure across generations, and why women are most often the face of eviction.</p>
+        </div>
+      </div>
+
+      <div class="subsection-header">
+        <h3 class="subsection-title">The Mourn-In Protest, 1967</h3>
+        <p class="subsection-blurb">In 1967, in Morningside Heights, Marie Runyon helped organize the "Mourn-In" protest. This action reframed protest as public grieving, a collective acknowledgment of threatened homes, destabilized families, and a neighborhood under pressure. By calling it a "Mourn-In," organizers emphasized that displacement was not an abstract policy but lived loss. The protest was a commitment to a diverse and integrated Morningside Heights. Neighbors and citizens gathered in black veils and armbands to mourn those displaced by institutional evictions and to mark what they saw as the death of the community they cherished. By that time, roughly 8,000 people across 30 sites had already been displaced by institutional development in the area. Those displaced were primarily Black and Puerto Rican residents, a demographic that continues to face displacement in the neighborhood today. The Mourn-In stands as a reminder that communities matter and that resistance can take the form of collective care and mourning.</p>
+      </div>
+
+      <div class="grid">
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true" alt="The Mourn-In Protest, 1967"></div>
+      </div>
+
+      <div class="subsection-header">
+        <h3 class="subsection-title">The Rocking Chair Protest, 1971</h3>
+        <p class="subsection-blurb">In 1971, the Morningside Tenants' Committee organized as the Defenders of the Morningside Homestead to protest the demolition of the Pharmacy Site on 121–122nd Streets and Amsterdam Avenue, following nine years of community resistance. On the morning of October 4, tenant activists gathered to defend their "homestead," evoking the image of American pioneers who stood watch from the porch, rocking chair at hand, ready to protect their homes. Their actions drew attention to the human cost of displacement and made clear that the community would not give up its homes without a fight.</p>
+      </div>
+
+      <div class="grid">
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/5.png?raw=true" alt="The Rocking Chair Protest, 1971"></div>
+      </div>
+
+      <div class="subsection-header">
+        <h3 class="subsection-title">Printed Materials, no date</h3>
+        <p class="subsection-blurb">Throughout her lifetime, Marie Runyon preserved records not only of her own activism, but also of groups she supported, including the Black Panthers, anti-war student movements, and the Granny Peace Brigade. Her archive contains clippings and ephemera documenting tenant struggles, evictions, and housing issues across New York City, offering a broader view of the fight for housing justice and social change in the city.</p>
+      </div>
+
+      <div class="grid">
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/4.png?raw=true" alt="Printed Materials"></div>
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/3.png?raw=true" alt="Printed Materials"></div>
+      </div>
+    </div>
+  </section>
+  <section id="window">
+    <div class="section-inner">
+      <div class="window-statement">
+        <p>The Window Protest,<br>2024 – ?</p>
+      </div>
+      <div class="window-details">
+        <strong>Location</strong>
+        West 111th Street<br>
+        New York, NY
+        <strong>Intervention</strong>
+        Posters on windows
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-heading">
+        Get<br>In<br><em>Touch</em>
+      </div>
+      <div class="contact-info">
+        <strong>Email</strong>
+        <a href="mailto:beenherestillhere@gmail.com">beenherestillhere@gmail.com</a>
+        <strong>Petition</strong>
+        <a href="https://change.org/protectrentersrights" target="_blank">change.org/protectrentersrights</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© The Markenfield Windows</span>
+    <span>Tenant Power &mdash; Housing Justice &mdash; New York City<
