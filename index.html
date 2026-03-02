@@ -17,14 +17,14 @@
   <meta property="og:description" content="A digital portal to a street-level window exhibition confronting housing displacement and tenant erasure in Morningside Heights, Manhattan. Featuring the Marie Runyon Archive.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://themarkenfield.com">
-  <meta property="og:image" content="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true">
+  <meta property="og:image" content="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/windows.png">
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Markenfield Windows — Housing Justice Exhibition">
   <meta name="twitter:description" content="A digital portal to a street-level window exhibition confronting housing displacement and tenant erasure in Morningside Heights, Manhattan.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/windows.png">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
     /* ── Reset & Base ── */
@@ -64,6 +64,8 @@
       padding: 10px 0;
       overflow: hidden;
       border-bottom: var(--rule);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .marquee-track {
@@ -97,44 +99,50 @@
     /* ── NAV ── */
     nav {
       border-bottom: var(--rule);
-      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      padding: 0 clamp(1rem, 4vw, 4rem);
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 52px;
+      overflow-x: auto;
+      gap: 1.5rem;
     }
 
     .nav-title {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-size: clamp(0.75rem, 2vw, 1.3rem);
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--black);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: clamp(0.8rem, 2vw, 2.5rem);
       list-style: none;
+      flex-shrink: 0;
     }
 
     .nav-links a {
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
+      font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--black);
       border-bottom: 1.5px solid transparent;
       padding-bottom: 1px;
       transition: border-color 0.15s;
+      white-space: nowrap;
     }
 
     .nav-links a:hover { border-bottom-color: var(--black); }
 
     /* ── HERO ── */
     .hero {
-      padding: clamp(5rem, 12vw, 10rem) clamp(1.5rem, 5vw, 4rem) clamp(4rem, 8vw, 7rem);
+      padding: clamp(3rem, 10vw, 10rem) clamp(1rem, 5vw, 4rem) clamp(2.5rem, 6vw, 7rem);
       border-bottom: var(--rule);
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -147,7 +155,7 @@
     }
 
     .hero-title {
-      font-size: clamp(3.5rem, 10vw, 9rem);
+      font-size: clamp(2.8rem, 10vw, 9rem);
       font-weight: 700;
       letter-spacing: -0.01em;
       text-transform: uppercase;
@@ -626,7 +634,7 @@
       </div>
 
       <div class="grid">
-        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/2.png?raw=true" alt="The Mourn-In Protest, 1967"></div>
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/windows.png" alt="The Mourn-In Protest, 1967"></div>
       </div>
 
       <div class="subsection-header">
@@ -635,7 +643,7 @@
       </div>
 
       <div class="grid">
-        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/5.png?raw=true" alt="The Rocking Chair Protest, 1971"></div>
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/rockingchair.png" alt="The Rocking Chair Protest, 1971"></div>
       </div>
 
       <div class="subsection-header">
@@ -644,12 +652,13 @@
       </div>
 
       <div class="grid">
-        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/4.png?raw=true" alt="Printed Materials"></div>
-        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/images/main/3.png?raw=true" alt="Printed Materials"></div>
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/printed1.png" alt="Printed Materials"></div>
+        <div class="work-cell"><img src="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/printed2.png" alt="Printed Materials"></div>
       </div>
     </div>
   </section>
   <section id="window">
+    <img src="https://raw.githubusercontent.com/beenherestillhere/themarkenfield/main/images/windows.png" alt="The Window Protest" style="width: 100%; height: auto; display: block;">
     <div class="section-inner">
       <div class="window-statement">
         <p>The Window Protest,<br>2024 – ?</p>
@@ -672,7 +681,7 @@
       </div>
       <div class="contact-info">
         <strong>Email</strong>
-        <a href="/cdn-cgi/l/email-protection#7f1d1a1a11171a0d1a0c0b161313171a0d1a3f18121e1613511c1012"><span class="__cf_email__" data-cfemail="c3a1a6a6adaba6b1a6b0b7aaafafaba6b1a683a4aea2aaafeda0acae">[email&#160;protected]</span></a>
+        <a href="mailto:beenherestillhere@gmail.com">beenherestillhere@gmail.com</a>
         <strong>Petition</strong>
         <a href="https://change.org/protectrentersrights" target="_blank">change.org/protectrentersrights</a>
       </div>
